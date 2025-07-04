@@ -1,0 +1,158 @@
+/* Modern Horizontal Navigation Bar */
+.home-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-ll {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #555;
+}
+
+.home-ll:last-child {
+  border-right: none;
+}
+
+.home-ll h1 {
+  margin: 0;
+  padding: 20px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-ll:hover {
+  background-color: #555;
+}
+
+.home-ll:hover h1 {
+  color: #4CAF50;
+  transform: translateY(-2px);
+}
+
+.home-ll:active {
+  background-color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-ul {
+    flex-direction: column;
+  }
+  
+  .home-ll {
+    border-right: none;
+    border-bottom: 1px solid #555;
+  }
+  
+  .home-ll:last-child {
+    border-bottom: none;
+  }
+  
+  .home-ll h1 {
+    font-size: 16px;
+    padding: 15px 10px;
+  }
+}
+
+/* Alternative: Colorful Modern Style */
+/*
+.home-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-ll {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.home-ll::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-ll:last-child::after {
+  display: none;
+}
+
+.home-ll h1 {
+  margin: 0;
+  padding: 20px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.home-ll:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-ll:hover h1 {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+*/
+
+/* Alternative: Light Clean Theme */
+/*
+.home-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.home-ll {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.home-ll:last-child {
+  border-right: none;
+}
+
+.home-ll h1 {
+  margin: 0;
+  padding: 20px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-ll:hover {
+  background-color: #f8f9fa;
+}
+
+.home-ll:hover h1 {
+  color: #007bff;
+}
+*/
