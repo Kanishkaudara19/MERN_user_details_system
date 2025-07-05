@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function User(props) {
   const {_id,name,gmail,age,address} = props.user
@@ -11,7 +12,10 @@ function User(props) {
           <h1>Gmail : {gmail}</h1>
           <h1>Age : {age}</h1>
           <h1>Address : {address}</h1>
-          <button>Update</button>
+          <Link to={`/userdetails/${_id}`} className='active home-a'>
+         <button>Update</button>
+        </Link>
+         
           <button>Delete</button>
           <br></br>
     </div>
