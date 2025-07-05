@@ -23,10 +23,30 @@ function Users() {
         onAfterPrint: () => alert("User Report Successfully Downloaded !"),
     });
 
+    const [searchQuery ,setSearchQuery] = useState("");
+    const [noResults ,setNoResults] = useState(false);
+
+    const handleSearch = ()=>{
+      fetchHandler().then((data)=>{
+        const filteredUsers = data.users.filter((user)=>
+        Object.values(user).some((field)=>
+          field.toString().toLowerCase().includes(searchQuery.toLowerCase())
+        ))
+        setUsers(filteredUsers);
+        setNoResults(filteredUsers.length === 0);
+      });
+    };
+
   return (
     <div>
         <Nav/>
         <h1>User details page</h1>
+        <input onChange={(e)=>setSearchQuery(e.target.value)} type='text' name='search' placeholder='Search User Details..'></input>
+        <button onClick={handleSearch}>Search</button>
+
+        { noResults?(
+          <div> <p>No Users Found.</p></div>
+        ):(
         <div ref={ComponentsRef}>
           { users && users.map((user, i) => (
             <div key ={i}> 
@@ -34,6 +54,8 @@ function Users() {
              </div>
           )) }
         </div>
+        )}
+        <br></br>
          <button onClick={ handlePrint }>Download Report</button>
     </div>
   )
