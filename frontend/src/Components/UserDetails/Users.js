@@ -3,6 +3,7 @@ import Nav from "../Nav/nav";
 import axios from 'axios';
 import User from "../User/User";
 import { useReactToPrint } from 'react-to-print';
+import './Users.css'
 
 const URL = "http://localhost:5000/users";
 
@@ -49,9 +50,10 @@ function Users() {
     <div>
         <Nav/>
         <h1>User details page</h1>
+        <div class="search-section">
         <input onChange={(e)=>setSearchQuery(e.target.value)} type='text' name='search' placeholder='Search User Details..'></input>
-        <button onClick={handleSearch}>Search</button>
-
+        <button type="button" onClick={handleSearch}>Search</button>
+        </div>
         { noResults?(
           <div> <p>No Users Found.</p></div>
         ):(
@@ -64,9 +66,11 @@ function Users() {
         </div>
         )}
         <br></br>
-         <button onClick={ handlePrint }>Download Report</button>
+        <div class="report-buttons">
+         <button onClick={ handlePrint } class="report-btn download-report">Download Report</button>
          <br></br>
-         <button onClick={ handleSendRequest }>Send Report</button>
+         <button onClick={ handleSendRequest } class="report-btn send-report">Send Report</button>
+         </div>
     </div>
   )
 }

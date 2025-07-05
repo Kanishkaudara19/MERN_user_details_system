@@ -1,0 +1,223 @@
+/* Modern Report Buttons CSS */
+
+/* Button Container */
+.report-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+/* Base Button Styles */
+.report-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Download Report Button */
+.download-report {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76,175,80,0.3);
+}
+
+.download-report:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76,175,80,0.4);
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+.download-report:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(76,175,80,0.3);
+}
+
+/* Send Report Button */
+.send-report {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    box-shadow: 0 4px 15px rgba(33,150,243,0.3);
+}
+
+.send-report:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(33,150,243,0.4);
+    background: linear-gradient(45deg, #1976D2, #2196F3);
+}
+
+.send-report:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(33,150,243,0.3);
+}
+
+/* Button Icons */
+.report-btn::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+}
+
+.download-report::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'%3E%3C/path%3E%3Cpolyline points='7,10 12,15 17,10'%3E%3C/polyline%3E%3Cline x1='12' y1='15' x2='12' y2='3'%3E%3C/line%3E%3C/svg%3E");
+}
+
+.send-report::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='22' y1='2' x2='11' y2='13'%3E%3C/line%3E%3Cpolygon points='22,2 15,22 11,13 2,9'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+/* Ripple Effect */
+.report-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.report-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Loading State */
+.report-btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.report-btn.loading::before {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Alternative Flat Design */
+.report-buttons.flat {
+    background: white;
+    border: 2px solid #e0e0e0;
+}
+
+.report-buttons.flat .report-btn {
+    border: 2px solid transparent;
+    background: white;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.report-buttons.flat .download-report {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.report-buttons.flat .download-report:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.report-buttons.flat .send-report {
+    border-color: #2196F3;
+    color: #2196F3;
+}
+
+.report-buttons.flat .send-report:hover {
+    background: #2196F3;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-buttons {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+        max-width: 300px;
+    }
+    
+    .report-btn {
+        width: 100%;
+        min-width: auto;
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-buttons {
+        margin: 15px;
+        padding: 12px;
+    }
+    
+    .report-btn {
+        padding: 12px 16px;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* Dark Theme Alternative */
+.report-buttons.dark {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.report-buttons.dark .download-report {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+.report-buttons.dark .send-report {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+/* Success/Error States */
+.report-btn.success {
+    background: linear-gradient(45deg, #27ae60, #2ecc71) !important;
+    animation: pulse 0.6s ease-in-out;
+}
+
+.report-btn.error {
+    background: linear-gradient(45deg, #e74c3c, #c0392b) !important;
+    animation: shake 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
