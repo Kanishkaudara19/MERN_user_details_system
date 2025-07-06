@@ -9,6 +9,7 @@ import UpdateUser from "./Components/UpadateUser/UpdateUser";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import Contact from "./Components/ContactUs/ContactUs";
+import Upload from "./Components/SendPdf/SendPdf";
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
            <Route path='/userdetails' element={<Users/>}/>
            <Route path='/userdetails/:id' element={< UpdateUser/>}/>
            <Route path='/regi' element={< Register />}/>
+           <Route path='/upload' element={< Upload />}/>
            <Route path='/log' element={< Login />}/>
            <Route path='/contactus' element={< Contact />}/>
         </Routes>
