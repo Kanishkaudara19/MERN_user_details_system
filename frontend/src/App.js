@@ -6,6 +6,7 @@ import Home from "./Components/Home/home";
 import AddUser from "./Components/AddUser/AddUser";
 import Users from "./Components/UserDetails/Users";
 import UpdateUser from "./Components/UpadateUser/UpdateUser";
+import Register from "./Components/Register/Register";
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
            <Route path='/adduser' element={< AddUser/>}/>
            <Route path='/userdetails' element={<Users/>}/>
            <Route path='/userdetails/:id' element={< UpdateUser/>}/>
+           <Route path='/regi' element={< Register />}/>
         </Routes>
       </React.Fragment>
     </div>

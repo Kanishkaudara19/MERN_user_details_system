@@ -21,3 +21,21 @@ mongoose.connect("mongodb+srv://admin:bVCL0qs6IOzwSstm@cluster0.ynvi0rx.mongodb.
     app.listen(5000);
 })
 .catch((err) =>console.log(err));
+
+//Call Register Model
+
+require("./Model/RegisterModel");
+const User = mongoose.model("RegisterModel");
+app.post("/register",async(req,res)=>{
+    const {name,gmail,password} = req.body;
+    try{
+        await User.create({
+            name,
+            gmail,
+            password,
+        })
+        res.send({status:"ok"});
+    }catch{
+        res.send({status:"err"});
+    }
+})
