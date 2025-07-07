@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Nav from "../Nav/nav";
 import axios from 'axios';
-import './sendpdf.css'
+import './sendpdf.css';
 
 function SendPdf() {
       // State variables
