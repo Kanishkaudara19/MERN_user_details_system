@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Nav from "../Nav/nav";
-function home() {
+import { AuthContext } from '../../context/AuthContext';
+import { jwtDecode } from 'jwt-decode';
+function Home() {
+const token = localStorage.getItem('token');
+            const decoded = jwtDecode(token);
+            console.log(decoded.name);
+
   return (
     <div>
       <Nav/>
-      <h1>Home New</h1>
+      <h1>Welcome {decoded.name}</h1>
     </div>
   )
 }
 
-export default home
+export default Home

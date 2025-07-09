@@ -6,7 +6,8 @@ const mongoose = require("mongoose");
 const router = require("./Routes/UserRoutes");
 const path = require("path");
 const fs = require('fs');
-
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 const app = express();
 const cors = require("cors");
 
@@ -51,7 +52,12 @@ app.post("/login", async (req, res) => {
             return res.json({ err: "User not found" });
         }
         if (user.password === password) {
-            return res.send({ status: "ok" });
+            const token = jwt.sign(
+        { id: user._id, gmail: user.gmail,name: user.name },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+    );
+    return res.send({ status: "ok", token });
         } else {
             return res.send({ err: "incorrect password" });
         }

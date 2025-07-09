@@ -41,11 +41,11 @@ function nav() {
         <h1>Register</h1>
         </Link>
     </li>
-    <li className='home-ll'>
+    {/* <li className='home-ll'>
         <Link to="/log" className='active home-a'>
         <h1>Login</h1>
         </Link>
-    </li>
+    </li> */}
 </ul>
     </div>
   )

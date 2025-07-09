@@ -23,7 +23,9 @@ function Login() {
         const response = await sendRequest();
         if(response.status === "ok"){
             alert("Login success");
-            history("/userdetails");
+            history("/mainhome");
+            localStorage.setItem('token', response.token);
+
         }else{
             alert("Login error");
         }
@@ -40,7 +42,7 @@ function Login() {
   };
   return (
     <div>
-      <Nav/>
+      {/* <Nav/> */}
       <h1>User Login</h1>
       <form onSubmit={handleSubmit}>
         
